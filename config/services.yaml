@@ -4,7 +4,7 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
-
+    public_dir: '%kernel.project_dir%/public'
 services:
     # default configuration for services in *this* file
     _defaults:
@@ -21,5 +21,9 @@ services:
             - '../src/Kernel.php'
             - '../src/Tests/'
 
+#    uploaded.file.service:
+#        class: App\Service\UploadFileService
+#        parameters:
+#            - Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

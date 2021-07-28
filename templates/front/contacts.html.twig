@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Front!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Contacts</h1>
+
+        <p>
+            <a href="{{ path('app_contact') }}" class="btn btn-outline-primary">
+                Ajouter un contact
+            </a>
+        </p>
+
+        {% for contact in contacts %}
+            <div class="row">
+                <div class="col-2">{{ contact.name }}</div>
+                <div class="col-2">{{ contact.email }}</div>
+                <div class="col-2">
+                    <img src="{{ asset(contact.avatar) }}" alt="{{ contact.name }}" class="img-fluid">
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+{% endblock %}
